@@ -4,23 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
+    <style>
+        .contenedor-principal {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px; 
+            padding: 20px;
+        }
+
+        .lista-pedidos {
+            flex: 1;
+        }
+
+        .formulario-orden {
+            flex: 1;
+            max-width: 300px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            background-image: url(img/recetario.avif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: red;
+            margin: 0;
+            padding: 10px;
+            color: white;
+        }
+    </style>
 </head>
-<body style="background-image: url(img/recetario.avif); background-repeat: no-repeat; background-size: cover;">
-    <h1 style="background-color: red; text-align: center;">Pedidos</h1>
-    <ol>
-        <h2 style="background-color: green; display: inline-block; margin: 0; padding: 5px;"><li>Pastel Navideño</li></h2>
-        <br>
-        <img src="img/pastel_navideño.jpeg" alt="pastel Navideño" style="width: 200px; height: 200px;">
-        <br>
-        <h2 style="background-color: green; display: inline-block; margin: 0; padding: 5px;"><li>Gelatina de mosaico</li></h2>
-        <br>
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8e-6JxUVsfBmgUAlhaKPEFdFWHHBEmpSNxOp3j2lmuV7AcbH6PPr1kIbP0R6DL6Ciq-hDe6qvNSa5pu3sajjBYGV2E-e1ELd6nks4ttSdI02KTxl2aH-gN-mFsobu5oypVX1crACeyJqX/s1600/gelatina+mosaico.jpg" 
-        alt="gelatina de mosaico" style="width: 200px; height: 150px;">
-        <br>
-        <h2 style="background-color: green; display: inline-block; margin: 0; padding: 5px;"><li>Galletas de jengibre</li></h2>
-        <br>
-        <img src="https://i0.wp.com/blog.claroshop.com/wp-content/uploads/2021/12/galletas-jengibre.jpg?fit=1024%2C694&ssl=1" 
-        alt="galletas de jengibre" style="width: 200px; height: 150px;">
-    </ol>
+<body>
+    <h1>Pedidos</h1>
+    <div class="contenedor-principal">
+        <div class="lista-pedidos">
+            <ol>
+                <h2 style="background-color: green; display: inline-block; margin: 0; padding: 5px;"><li>Pastel Navideño</li></h2>
+                <br>
+                <img src="img/pastel_navideño.jpeg" alt="pastel Navideño" style="width: 200px; height: 200px;">
+                <br>
+                <h2 style="background-color: green; display: inline-block; margin: 0; padding: 5px;"><li>Gelatina de mosaico</li></h2>
+                <br>
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8e-6JxUVsfBmgUAlhaKPEFdFWHHBEmpSNxOp3j2lmuV7AcbH6PPr1kIbP0R6DL6Ciq-hDe6qvNSa5pu3sajjBYGV2E-e1ELd6nks4ttSdI02KTxl2aH-gN-mFsobu5oypVX1crACeyJqX/s1600/gelatina+mosaico.jpg" 
+                alt="gelatina de mosaico" style="width: 200px; height: 150px;">
+                <br>
+                <h2 style="background-color: green; display: inline-block; margin: 0; padding: 5px;"><li>Galletas de jengibre</li></h2>
+                <br>
+                <img src="https://i0.wp.com/blog.claroshop.com/wp-content/uploads/2021/12/galletas-jengibre.jpg?fit=1024%2C694&ssl=1" 
+                alt="galletas de jengibre" style="width: 200px; height: 150px;">
+            </ol>
+        </div>
+
+        <div class="formulario-orden">
+            <h2>Formulario de orden</h2>
+            <form id="miFormulario">
+                <label for="postre">Nombre del postre o postres a ordenar:</label>
+                <textarea id="postre" name="postre" placeholder="Ingresa la orden a pedir" rows="4" cols="30" required></textarea>
+                <br><br>
+                <label for="nombre">Nombre Completo:</label>
+                <br>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" rows="4" cols="30" required>
+                <br><br>
+            
+                <label for="direccion">Dirección:</label>
+                <textarea id="direccion" name="direccion" placeholder="Ingresa tu dirección" rows="4" cols="30" required></textarea>
+                <br><br>
+                <label for="telefono">Teléfono:</label>
+                <textarea id="telefono" name="telefono" placeholder="Ingresa tu teléfono" rows="4" cols="30" required></textarea>
+                <br><br>
+            
+                <button type="submit">Enviar</button>
+            </form>
+            
+            <script>
+                document.getElementById('miFormulario').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    alert('Formulario enviado');
+                });
+            </script>
+        </div>
+    </div>
 </body>
 </html>
